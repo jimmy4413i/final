@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Load c3.css -->
+<link href="c3-0.4.11/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="c3-0.4.11/d3.js" charset="utf-8"></script>
+<script src="c3-0.4.11/c3.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+  <meta charset="utf-8">
+  <title>統計圖表</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="index.html">高雄文化地圖</a></h1>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="religion.html">宗教介紹</a></li>
+                    <li><a href="#">文化地圖</a></li>
+                    <li><a href="#">路線規劃</a></li>
+                    <li><a href="pie.html">統計圖表</a></li>
+            </div>
+        </div>
+
+    </div>
+    <!-- end #header -->
+    
+    <div id="page">
+        <div id="content">
+            <div id="chart"></div>
+            
+        </div>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end #content -->
+        <div style="clear: both;">&nbsp;</div>
+
+        
+    </div>
+    <!-- end #page --> 
+</div>
+<div id="footer">
+    <p>Design by Y.Y.Chen & J.L.Huang</p>
+</div>
+
+<script type="text/javascript">
+  var chart = c3.generate({
+    data: {
+        // iris data from R
+        columns: [
+            ['道教', 1119],
+            ['佛教', 337],
+            ['基督教', 126],
+            ['天主教', 18],
+            ['伊斯蘭教', 1],
+            ['儒教', 17],
+            ['其他', 40]
+        ],
+        type : 'pie',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    }
+});
+
+setTimeout(function () {
+    chart.load({
+        columns: [
+        ]
+    });
+}, 1500);
+
+setTimeout(function () {
+    chart.unload({
+        ids: 'data1'
+    });
+    chart.unload({
+        ids: 'data2'
+    });
+}, 2500);
+
+
+
+
+</script>
+</body>
+</html>

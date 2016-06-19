@@ -1,0 +1,673 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>可勾選選單</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/table.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+</head>
+<!-- CSS -->
+<style type="text/css">
+body{
+	font-size: small;
+}
+ul, li, h3, p{
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+.button{
+	margin-top: 180px;
+}
+table {
+    margin-top: 0px;
+    border-spacing: collapse;
+    border-spacing: 0;
+    border: none;
+	vertical-align:middle;
+	background: white;
+	font-family: 微軟正黑體;
+}
+td {
+    padding:0 10px 0 10px;
+    height: 25px;
+    border: 1px solid black;
+}
+#abgne .info {
+	display: none;
+	margin: 0 auto; 
+}
+#abgne .info_on {
+	margin: 0 auto; 
+}
+#abgne .on {
+	display: block;
+}
+#abgne .title {
+	/*border-top: 2px solid #f6c;*/
+}
+#abgne .title li {
+	cursor: pointer;
+	float: left;
+	width: 128px;
+	background-color: #3e3e3e;
+	border-right: 1px solid #000;
+	height: 30px;
+	padding: 7px 7px 4px;
+}
+#abgne .title li.on, #abgne .title li.over {
+	background-color: #f6c;
+	border-right: 1px solid #f6c;
+}
+#abgne .title li h3 {
+	font-size: 18px;
+	text-align:center;
+	font-family: 微軟正黑體;
+	color: #c90;
+	padding-bottom: 6px;
+}
+#abgne .title li p{
+	font-size: 12px;
+	color: #ccc;
+}
+#abgne .title li.on h3, #abgne .title .over h3, #abgne .title li.on p, #abgne .title .over p {
+	color: #fff;
+}
+
+.button a{
+	display: block;
+	width: 88px;
+	padding: 5px 5px;
+	margin-right: 30px;
+	background: #222222;
+	color: #FFFFFF;
+	text-align: center;
+	text-decoration: none;
+	font-family: 微軟正黑體;
+}
+
+</style>
+<body>
+	<div id="abgne">
+		<div class="bd">
+			<center>
+			<div class="title">
+				<ul>
+					<li><h3>楠梓區</h3></li>
+					<li><h3>左營區</h3></li>
+					<li><h3>鼓山區</h3></li>
+					<li><h3>三民區</h3></li>
+					<li><h3>鹽埕區</h3></li>
+					<li><h3>前金區</h3></li>
+					<li><h3>新興區</h3></li>
+					<li><h3>苓雅區</h3></li>
+					<li><h3>前鎮區</h3></li>
+					<li><h3>旗津區</h3></li>
+					<li><h3>小港區</h3></li>
+					<li><h3>鳳山區</h3></li>
+					<li><h3>大寮區</h3></li>
+					<li><h3>鳥松區</h3></li>
+					<li><h3>林園區</h3></li>
+					<li><h3>仁武區</h3></li>
+					<li><h3>大樹區</h3></li>
+					<li><h3>大社區</h3></li>
+					<li><h3>岡山區</h3></li>
+					<li><h3>路竹區</h3></li>
+					<li><h3>橋頭區</h3></li>
+					<li><h3>梓官區</h3></li>
+					<li><h3>彌陀區</h3></li>
+					<li><h3>永安區</h3></li>
+					<li><h3>燕巢區</h3></li>
+					<li><h3>田寮區</h3></li>
+					<li><h3>阿蓮區</h3></li>
+					<li><h3>茄萣區</h3></li>
+					<li><h3>湖內區</h3></li>
+					<li><h3>旗山區</h3></li>
+					<li><h3>美濃區</h3></li>
+					<li><h3>內門區</h3></li>
+					<li><h3>杉林區</h3></li>
+					<li><h3>甲仙區</h3></li>
+					<li><h3>六龜區</h3></li>
+					<li><h3>茂林區</h3></li>
+					<li><h3>桃源區</h3></li>
+					<li><h3>那瑪夏區</h3></li>
+				</ul>
+			</div>
+			<br>
+			<div class="button">
+				<a href="drag.html" onclick="gogo()">確定</a>
+				<!-- <input type="button" class="submit" onclick="javascript:location.href='drag.html'" value="確認" href="drag.html"> -->
+			</div>
+			<br>
+			<div class="info_on">
+				<table>
+			    <tbody class="tb0">
+			        
+			    </tbody>    
+			</table>
+			</div>
+			
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb1">
+			        
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb2">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb3">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb4">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb5">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb6">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb7">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb8">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb9">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb10">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb11">
+			        
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb12">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb13">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb14">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb15">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb16">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb17">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb18">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb19">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb20">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb21">
+			        
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb22">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb23">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb24">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb25">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb26">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb27">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb28">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb29">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb30">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb31">
+			        
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb32">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb33">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb34">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb35">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			        <tr>
+			        	<td>無</td>
+			            <td>無</td>
+			            <td>無</td>
+			            <td>無</td>
+			        </tr>
+			    <tbody class="tb36">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb37">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			<div class="info">
+				<table>
+			        <tr>
+			        	<td>列入路線規劃</td>
+			            <td>寺廟名</td>
+			            <td>宗教類別</td>
+			            <td>地址</td>
+			        </tr>
+			    <tbody class="tb38">
+			       
+			    </tbody>    
+			</table>
+			</div>
+			
+			</center>
+		</div>
+	</div>
+	<!-- <table>
+	        <tr>
+	        	<td>列入路線規劃</td>
+	            <td>寺廟名</td>
+	            <td>宗教類別</td>
+	            <td>地址</td>
+	        </tr>
+	    <tbody class="tb">
+	        
+	    <tbody>    
+	</table> -->
+
+
+</body>
+</html>
